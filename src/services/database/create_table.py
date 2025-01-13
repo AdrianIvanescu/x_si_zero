@@ -14,22 +14,14 @@ class CreateTable():
         sql = f"""
         CREATE TABLE IF NOT EXISTS {self.table_name}(
         ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        A CHAR(10) NOT NULL,
-        B CHAR(10) NOT NULL,
-        C CHAR(10) NOT NULL
+        A CHAR(10) NOT NULL DEFAULT '-',
+        B CHAR(10) NOT NULL DEFAULT '-',
+        C CHAR(10) NOT NULL DEFAULT '-'
         );
-        """
-
-        sql1 = f"""
-         INSERT INTO {self.table_name} (A,B,C)
-        VALUES('-','-','-');
         """
 
         self.db_conn.open_db_connection()
         self.db_conn.execute_sql(sql)
-        self.db_conn.execute_sql(sql1)
-        self.db_conn.execute_sql(sql1)
-        self.db_conn.execute_sql(sql1)
         self.db_conn.commit_db_change()
         self.db_conn.close_db_connection
         print(

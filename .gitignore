@@ -1,0 +1,15 @@
+.git
+
+# OS files:
+Thumbs.db
+.DS_Store
+
+# db
+x_si_zero.db
+*.db*
+
+# tests
+.tox
+__pycache__
+
+x_si_zero.egg-info/
